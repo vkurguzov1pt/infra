@@ -1,0 +1,14 @@
+    - List all containers  - docker ps -a
+    - List RUNNING containers - docker ps
+    - List all images - docker images
+    - Remove container - docker rm CONTAINER_ID
+    - Remove image - docker rmi IMAGE_ID  or docker rmi REPOSITORY 
+    - Download docker image - docker pull IMAGE_NAME
+    - Run container - docker run -i (interactive) -t (pseudo-tty) IMAGE_NAME
+    - Start container  - docker start -ai (attach stderr/stdout/stdin) CONTAINER_ID
+    - Start container in background - docker start/run -itd (detach)  IMAGE_NAME
+    - Enter container  - docker attach CONTAINER_ID
+    - Exit container without stopping -  Ctrl+p Ctrl+q
+    - Get information about container - docker inspect CONTAINER_ID
+    - Expose port - docker run -p 127.0.0.1:$HOSTPORT:$CONTAINERPORT --name CONTAINER -t someimage
+
