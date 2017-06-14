@@ -1,0 +1,21 @@
+\dt - show tables
+\du - show users
+\list - show databases
+\dp schema_name.* - privileges to tables in schema
+\dn+ - extended info about schemas
+\d+ table_name - describe table
+\di+ schema_name.* - show indexes
+\db - list of tablespaces
+
+
+GRANT USAGE ON SCHEMA schema TO user;
+GRANT SELECT ON ALL SEQUENCES IN  SCHEMA lead_gen_service TO readuser;
+GRANT SELECT ON ALL TABLES IN  SCHEMA lead_gen_service TO readuser;
+alter default privileges in schema public grant select on tables to readonly;
+alter default privileges in schema public grant select on sequences to readonly;
+
+Show db size
+SELECT pg_size_pretty(pg_database_size('BASE_NAME'));
+
+Show tablespace name & location
+select spcname, pg_tablespace_location(oid) from pg_tablespace;
