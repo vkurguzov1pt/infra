@@ -1,0 +1,57 @@
+Ssh tunnel
+ssh -nNT -L 127.0.0.1:8080:10.200.60.221:7000 fpdev@172.17.0.150
+
+Remove from sudo group
+sudo gpasswd -d username sudo
+
+Add persistent alias
+echo 'alias rake="bundle exec rake"' >> ~/.bashrc
+
+Add current user to a group
+sudo usermod -aG docker $(whoami)
+
+Add user to system
+useradd username -m -d /home/deployer -s /bin/bash
+
+Read from file by line
+while IFS='' read -r line || [[ -n "$line" ]]; do sudo apt-get install $line -y; done < filename
+
+Ubuntu: list installed packages
+dpkg --get-selections | grep -i puppet
+
+Missing PUB keys fix
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 7F438280EF8D349F
+
+One packet upgrade
+sudo apt-get install --only-upgrade <packagename>
+
+For I example
+for i in `ls`; do if [ -f "$i" ]; then sed -i "s|10.200.81.68|172.17.0.5|g" $i; fi; done
+for i in `ls`; do mv $i `echo $i | cut -d. -f1,2`; done
+
+for Dir in ./*.yml.example; do  cp "${Dir}" "${Dir%.*}"; done
+
+Add-apt-repository: command not found
+sudo apt-get install python-software-properties
+
+Get IP address from /proc
+awk '/32 host/ { print f } {f=$2}' <<< "$(</proc/net/fib_trie)"
+
+Eval ssh
+eval "$(ssh-agent -s)"
+ssh-add
+
+Random pool initialized
+Update Ubuntu to 16.04
+
+sudo apt-get update && sudo apt-get upgrade -y &&  sudo apt-get dist-upgrade -y
+sudo do-release-upgrade
+vim /etc/default/grub
+vim /etc/default/grub.d/50-cloudimg-settings.cfg
+GRUB_CMDLINE_LINUX_DEFAULT="nomodeset"
+exit
+sudo update-grub
+
+Filesize
+SIZE="$(stat -c%s "filename")"
+in bytes
