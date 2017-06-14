@@ -1,0 +1,7 @@
+apt-get update
+apt-get install libcurl3 -y
+apt-get install iputils-ping -y
+apt-get install -y net-tools
+apt-get -y install sudo
+apt-get -y install vim
+apt-get install -y openssh-server
