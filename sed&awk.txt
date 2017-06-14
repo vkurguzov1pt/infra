@@ -1,0 +1,14 @@
+SED Remove lines starting with 2 whitespaces and symbol #
+sed -i '.or' "/^[[:space:]][[:space:]]#/ d" config/environments/staging.rb (-i only for Mac)
+
+SED Remove empty lines
+sed -i '.or' '/^\s*$/d' config/environments/staging.rb
+
+SED Replace space with new line
+sed -i 's/\s\+/\n/g'
+
+AWK  Don't print 1st line
+awk '{if (NR!=1) print $1}'
+
+Use all arguments from CL
+"$@"
