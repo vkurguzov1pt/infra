@@ -1,3 +1,6 @@
+Install new puppet
+bash <(curl -Ll https://raw.githubusercontent.com/vkurguzov1pt/dockerfiles/master/puppet4.9_install.sh)
+
 Ssh tunnel
 ssh -nNT -L 127.0.0.1:8080:10.200.60.221:7000 fpdev@172.17.0.150
 
