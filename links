@@ -1,2 +1,5 @@
 Install AMI LAMP
 sudo yum install -y httpd24 php70 mysql56-server php70-mysqlnd
+
+Set timezone
+http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/set-time.html
