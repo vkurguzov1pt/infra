@@ -1,6 +1,9 @@
 Install AMI LAMP
 sudo yum install -y httpd24 php70 mysql56-server php70-mysqlnd
 
+Installing a LAMP Web Server on Amazon Linux
+http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/install-LAMP.html
+
 (For Zabbix)
 sudo yum install php70-bcmath php70-mbstring php70-gd
 
