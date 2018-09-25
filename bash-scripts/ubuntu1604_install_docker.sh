@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Colorize output
+
 show_output () {
   if [[ $? -ne 0 ]]; then echo -e "\033[1;41m [FAILED] \033[0m ${message}"
   else echo -e "\033[1;42m [SUCCESS] \033[0m ${message}"
