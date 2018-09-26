@@ -3,6 +3,21 @@ pipeline {
 
 	stages {
 
+		stage('Checkout Simple-Java-App from GitHub') {
+			steps {
+				checkout(
+					[
+						$class: 'GitSCM',
+						branches: [[name: '*/master']],
+						doGenerateSubmoduleConfigurations: false,
+						extensions: [],
+						submoduleCfg: [],
+						userRemoteConfigs: [[url: 'git@github.com:jenkins-docs/simple-java-maven-app.git']]
+					]
+				)
+			}
+		}
+
 		stage('Build') {
 			steps {
 				echo 'Building...'
