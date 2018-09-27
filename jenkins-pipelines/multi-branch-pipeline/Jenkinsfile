@@ -1,0 +1,33 @@
+ pipeline {
+ 	agent  {
+ 		docker {
+ 			image	'maven'
+ 			args	'-v /root/.m2:/root/.m2'
+ 		}
+ 	}
+
+ 	stages{
+
+ 		stage('Checkout from SCM') {
+
+ 			steps {
+ 				checkout(
+ 					[ $class: 'GitSCM',
+ 					branches: [[name: '*/master']],
+ 					doGenerateSubmoduleConfigurations: false,
+ 					extensions: [],
+ 					submoduleCfg: [],
+					userRemoteConfigs: [[url: 'git@github.com:jenkins-docs/simple-java-maven-app.git']] 
+ 					]
+ 				)
+ 			}
+ 		}
+
+ 		stage('Build') {
+
+ 			steps {
+ 				sh 'mvn -B -DskipTests clean package'
+ 			}
+ 		}
+ 	}
+ }
