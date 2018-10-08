@@ -1,0 +1,14 @@
+Use Macvlan:
+
+    - When you only need to provide egress connection to the physical network to your VMs or containers.
+    - Because it uses less host CPU and provides slightly better throughput.
+
+Use Bridge:
+
+    - When you need to connect VMs or containers on the same host.
+    - For complex topologies with multiple bridges and hybrid environments (hosts in the same Layer2 domain both on the same host and outside the host).
+    - You need to apply advanced flood control, FDB manipulation, etc.
+
+
+HTTP:
+http://hicu.be/bridge-vs-macvlan
