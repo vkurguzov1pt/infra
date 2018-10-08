@@ -12,3 +12,6 @@ Use Bridge:
 
 HTTP:
 http://hicu.be/bridge-vs-macvlan
+
+Docker Networking: macvlan bridge
+http://hicu.be/docker-networking-macvlan-bridge-mode-configuration
